@@ -1,0 +1,33 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+*.db
+
+# Environment Variables
+.env
+backend/.env
+frontend/.env
+frontend/.env.production
+
+# Node
+frontend/node_modules/
+
+# Vite
+frontend/dist/
+
+# Uploads
+backend/uploads/
+
+# Generated Files
+backend/generated/
+
+# Reports
+backend/reports/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
