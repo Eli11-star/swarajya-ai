@@ -50,11 +50,11 @@ export default function Passport() {
 
         <PassportFooter model={aiModel} />
 
-        <ExecutiveReport passport={aiModel} />
+         {/*<ExecutiveReport passport={aiModel} /> */}
 
-        <ComplianceMatrix passport={aiModel} />
+         {/* <ComplianceMatrix passport={aiModel} /> */}
 
-        <ScoreSimulator passport={aiModel} />
+        {/* <ScoreSimulator passport={aiModel} /> */}
 
         <CopilotChat passport={aiModel} />
 
