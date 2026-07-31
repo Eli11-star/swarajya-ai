@@ -19,15 +19,23 @@ def evaluate_document(document_text: str):
     document_text = document_text[:25000]
 
     prompt = f"""
-Return ONLY valid JSON.
+You are an AI Governance Auditor.
+
+Analyze the following AI documentation and extract the requested information.
+
+Instructions:
+- Return ONLY valid JSON.
+- Do not wrap the JSON in markdown.
+- If a value cannot be determined, use "Not Available".
+- Infer the model name, organization, and version from the document whenever possible.
+- Evaluate the document and assign realistic scores from 0-100.
+
+Return this exact JSON format:
 
 {{
-  "modelName": "",
-  "organization": "",
-  "version": "1.0",
-  "trustScore": 0,
-  "risk": "",
-  "status": "",
+  "modelName": "Not Available",
+  "organization": "Not Available",
+  "version": "Not Available",
   "scores": {{
     "security": 0,
     "privacy": 0,
@@ -43,7 +51,7 @@ Return ONLY valid JSON.
 Document:
 
 {document_text}
-""" 
+"""
 
 
     try:
@@ -66,14 +74,13 @@ Document:
 
         # ---------- Default Values ----------
 
-        passport.setdefault("modelName", "Unknown Model")
-        passport.setdefault("organization", "Unknown Organization")
-        passport.setdefault("version", "1.0")
-        passport.setdefault("trustScore", 0)
+        passport["modelName"] = passport.get("modelName") or "Not Available"
+        passport["organization"] = passport.get("organization") or "Not Available"
+        passport["version"] = passport.get("version") or "Not Available"
         passport.setdefault("risk", "Unknown")
         passport.setdefault("status", "Pending")
-        passport.setdefault("summary", "")
-        passport.setdefault("recommendations", [])
+        passport["summary"] = passport.get("summary") or "No summary available."
+        passport["recommendations"] = passport.get("recommendations") or []
 
         passport.setdefault("scores", {})
 

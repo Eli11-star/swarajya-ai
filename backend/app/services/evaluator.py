@@ -8,6 +8,7 @@ from app.services.qr_service import generate_qr
 from app.services.pdf_generator import generate_passport_pdf
 from app.database import SessionLocal
 from app.models import Passport
+import os
 
 
 def evaluate(pdf_path):
@@ -22,10 +23,13 @@ def evaluate(pdf_path):
     except Exception as e:
         print(e)
 
+        filename = os.path.splitext(os.path.basename(pdf_path))[0]
+
+
         passport = {
-            "modelName": "Demo AI Model",
-            "organization": "Demo Organization",
-            "version": "1.0",
+            "modelName": filename.replace("_", " ").replace("-", " ").title(),
+             "organization": "Not Available",
+               "version": "Not Available",
             "scores": {
                 "security": 90,
                 "privacy": 88,
