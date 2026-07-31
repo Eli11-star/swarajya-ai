@@ -17,7 +17,7 @@ export default function PassportFooter({ model }) {
       <div className="text-center">
 
         <img
-          src={`http://127.0.0.1:8000/generated/qr/${model.passportId}.png`}
+          src={`${import.meta.env.VITE_API}/generated/qr/${aiModel.passportId}.png`}
           alt="Passport QR"
           className="w-40 rounded-xl bg-white p-3 mx-auto"
         />
@@ -31,7 +31,7 @@ export default function PassportFooter({ model }) {
       <button
         onClick={() =>
           window.open(
-            `http://127.0.0.1:8000/passport/${model.passportId}`,
+            `${import.meta.env.VITE_API}/passport/${aiModel.passportId}`,
             "_blank"
           )
         }

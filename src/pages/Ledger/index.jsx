@@ -13,7 +13,7 @@ export default function Ledger() {
         if (!aiModel) return;
 
         fetch(
-            `http://127.0.0.1:8000/ledger/${aiModel.passportId}`
+           `${import.meta.env.VITE_API}/ledger/${aiModel.passportId}`
         )
             .then(r => r.json())
             .then(setEvents);

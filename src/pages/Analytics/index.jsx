@@ -4,6 +4,7 @@ import AIStatistics from "../../components/mission/AIStatistics";
 import TrustTrend from "../../components/analytics/TrustTrend";
 import RiskDistribution from "../../components/analytics/RiskDistribution";
 import OrganizationRanking from "../../components/analytics/OrganizationChart";
+import.meta.env.VITE_API
 
 export default function Analytics() {
 
@@ -11,7 +12,7 @@ export default function Analytics() {
 
     useEffect(() => {
 
-        fetch("http://127.0.0.1:8000/registry")
+        fetch(`${import.meta.env.VITE_API}/registry`)
             .then(res => res.json())
             .then(data => setModels(data));
 
