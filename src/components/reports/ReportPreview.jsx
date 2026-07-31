@@ -5,6 +5,11 @@ export default function ReportPreview(){
 
 const { aiModel } = useApp();
 
+   if (!aiModel) {
+        return null;
+    }
+
+
 return(
 
 <Card className="mt-8">

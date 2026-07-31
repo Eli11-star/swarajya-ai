@@ -15,8 +15,8 @@ import ScoreSimulator from "../../components/simulator/ScoreSimulator";
 
 export default function Passport() {
 
-    const { model } = useApp();
-    console.log(model);
+    const { aiModel } = useApp();
+    console.log(aiModel);
     if (!aiModel || !aiModel.scores) {
   return (
     <Layout>
