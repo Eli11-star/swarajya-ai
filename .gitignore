@@ -11,10 +11,10 @@ frontend/.env
 frontend/.env.production
 
 # Node
-frontend/node_modules/
+node_modules/
 
 # Vite
-frontend/dist/
+dist/
 
 # Uploads
 backend/uploads/
