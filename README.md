@@ -19,6 +19,17 @@ https://swarajya-ai-backend-zs6a.onrender.com/docs
 
 ---
 
+#Screenshots
+• Landing Page
+• Upload Page
+• Analysis Pipeline
+• AI Passport
+• Trust Engine
+• Registry
+• AI Copilot
+
+---
+
 # ✨ Features
 
 ## 📄 AI Model Evaluation
